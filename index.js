@@ -1,5 +1,5 @@
 const express = require("express");
-const dotenv = require("dotenv");
+
 const userRouter = require("./routes/user.route.js");
 const productRouter = require("./routes/product.route.js");
 const diamondRouter = require("./routes/diamond.route.js");
@@ -17,7 +17,7 @@ const app = express();
 const cors = require("cors");
 const PORT = process.env.PORT || 8000;
 
-dotenv.config();
+
 
 app.use(cors({ origin: "*" }));
 app.use(express.json());
