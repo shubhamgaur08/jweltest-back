@@ -18,9 +18,12 @@ const cors = require("cors");
 const PORT = process.env.PORT || 8000;
 
 
-
-app.use(cors({ origin: "*" }));
+app.use(cors({ origin: "*", credentials: true }));
 app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.send("Welcome to the backend of the diamond-ring shop!");
+});
 
 app.use("/api/users", userRouter);
 app.use("/api/products", productRouter);
@@ -37,3 +40,4 @@ app.listen(PORT, () => {
   connectToMongoDB();
   console.log(`Server Running on port ${PORT}`);
 });
+
