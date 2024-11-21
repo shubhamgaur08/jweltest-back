@@ -14,11 +14,15 @@ const orderItemRouter = require("./routes/orderItem.route.js");
 const connectToMongoDB = require("./database/connectMongoDB.js");
 
 const app = express();
-const cors = require("cors");
+const cors = require('cors');
 const PORT = process.env.PORT || 8000;
 
 
-app.use(cors({ origin: "*"}));
+app.use(cors(
+  {
+    origin: '*',
+  }
+));
 app.use(express.json());
 
 app.get("/", (req, res) => {
