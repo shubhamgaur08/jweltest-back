@@ -5,6 +5,9 @@ module.exports = {
   GetAllProduct: async (req, res) => {
     try {
       const product = await Product.find()
+      .populate("diamondId")
+      .populate("shellId", "shellName category size")
+      .populate("materialId", "materialName");
       res.status(200).json(product);
     } catch (error) {
       console.log("Error get all product!", error);
