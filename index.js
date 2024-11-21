@@ -18,7 +18,7 @@ const cors = require("cors");
 const PORT = process.env.PORT || 8000;
 
 
-app.use(cors({ origin: "*", credentials: true }));
+app.use(cors({ origin: "*"}));
 app.use(express.json());
 
 app.get("/", (req, res) => {
